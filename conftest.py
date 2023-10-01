@@ -5,7 +5,7 @@ from selene import Browser, Config, browser
 from selenium import webdriver
 from utils import attach
 
-FILE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), 'image'))
+FILE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), 'tests/image'))
 DEFAULT_BROWSER_VERSION = "100.0"
 
 
