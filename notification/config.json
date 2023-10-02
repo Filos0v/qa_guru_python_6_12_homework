@@ -6,7 +6,7 @@
     "comment": "",
     "language": "ru",
     "messenger": "telegram",
-    "allureFolder": "tests/allure-results",
+    "allureFolder": "allure-results",
     "enableChart": false
   },
   "telegram": {
