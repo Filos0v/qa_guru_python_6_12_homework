@@ -1,7 +1,7 @@
 from pages.registration_page import RegistrationPage, User
 
 
-def test_filling_form():
+def test_filling_form(setup_browser):
     demo_user = User(first_name='Aleksandr',
                      last_name='Shevchenko',
                      email='a.shevchenko666@mail.com',

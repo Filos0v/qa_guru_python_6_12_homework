@@ -51,6 +51,4 @@ def setup_browser(request):
     browser.quit()
 
 
-@pytest.fixture(scope='function', autouse=True)
-def browser_open():
-    browser.config.base_url = 'https://demoqa.com'
+

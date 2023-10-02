@@ -28,9 +28,9 @@ class RegistrationPage(User):
     @staticmethod
     @allure.step("Открываем страницу для заполнения формы")
     def open():
-        browser.open('/automation-practice-form')
+        browser.open('https://demoqa.com/automation-practice-form')
 
-    #@allure.step('Заполняем форму для регистрации') #todo - test failed, when this step not in commentary
+    @allure.step('Заполняем форму для регистрации') #todo - test failed, when this step not in commentary
     def register(self, user):
         self.firstName.type(user.first_name)
         self.lastName.type(user.last_name)
