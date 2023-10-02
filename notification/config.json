@@ -1,0 +1,19 @@
+{
+  "base": {
+    "logo": "",
+    "project": "lesson_6_13",
+    "environment": "local",
+    "comment": "",
+    "language": "ru",
+    "messenger": "telegram",
+    "allureFolder": "tests/allure-results",
+    "enableChart": false
+  },
+  "telegram": {
+    "token": "6311021446:AAFTJf-JThZaHk7a3-O0YTqhn8csJGpl8uE",
+    "chat": "402069335",
+    "replyTo": ""
+  }
+}
+
+
