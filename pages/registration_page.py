@@ -30,7 +30,7 @@ class RegistrationPage(User):
     def open():
         browser.open('https://demoqa.com/automation-practice-form')
 
-    @allure.step('Заполняем форму для регистрации') #todo - test failed, when this step not in commentary
+    #@allure.step('Заполняем форму для регистрации')
     def register(self, user):
         self.firstName.type(user.first_name)
         self.lastName.type(user.last_name)

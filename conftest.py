@@ -18,8 +18,8 @@ def pytest_addoption(parser):
 
 @pytest.fixture()
 def setup_browser(request):
-    browser.config.window_width = 1920
-    browser.config.window_height = 1080
+    browser.config.window_width = 3840 #1920
+    browser.config.window_height = 2160 #1080
     browser.config.timeout = 15
 
     browser_version = request.config.getoption('--browser_version')
