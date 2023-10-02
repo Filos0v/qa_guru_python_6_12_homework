@@ -26,13 +26,12 @@ class RegistrationPage(User):
         self.resultTable = browser.all('.modal-content td')
 
     @staticmethod
-    @allure.step("Открываем страницу для заполнения формы")
+    @allure.step("Открываем страницу для заполнения формы и заполняем её")
     def open():
         browser.open('https://demoqa.com/automation-practice-form')
         browser.execute_script('document.querySelector("#fixedban").remove()')
         browser.element('footer').execute_script('element.remove()')
 
-    #@allure.step('Заполняем форму для регистрации')
     def register(self, user):
         self.firstName.type(user.first_name)
         self.lastName.type(user.last_name)
