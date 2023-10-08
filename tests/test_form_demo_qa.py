@@ -21,4 +21,3 @@ def test_filling_form(setup_browser):
     registration_page.open()
     registration_page.register(demo_user)
     registration_page.should_have_registered(demo_user)
-    registration_page.close_submit_form()
