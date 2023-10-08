@@ -1,9 +1,10 @@
 import os
 import pytest
 from selenium.webdriver.chrome.options import Options
-from selene import Browser, Config, browser
+from selene import browser
 from selenium import webdriver
-from utils import attach
+from utils.attach import add_html, add_logs, add_video, add_screenshot
+from dotenv import load_dotenv
 
 FILE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), 'tests/image'))
 DEFAULT_BROWSER_VERSION = "100.0"
@@ -14,6 +15,11 @@ def pytest_addoption(parser):
         '--browser_version',
         default='100.0'
     )
+
+
+@pytest.fixture(scope='session', autouse=True)
+def load_env():
+    load_dotenv()
 
 
 @pytest.fixture()
@@ -35,20 +41,20 @@ def setup_browser(request):
     }
     options.capabilities.update(selenoid_capabilities)
 
+    login = os.getenv('LOGIN')
+    password = os.getenv('PASSWORD')
+
     driver = webdriver.Remote(
-        command_executor=f"https://user1:1234@selenoid.autotests.cloud/wd/hub",
+        command_executor=f"https://{login}:{password}@selenoid.autotests.cloud/wd/hub",
         options=options
     )
     browser.config.driver = driver
 
     yield browser
 
-    attach.add_html(browser)
-    attach.add_screenshot(browser)
-    attach.add_logs(browser)
-    attach.add_video(browser)
+    add_html(browser)
+    add_screenshot(browser)
+    add_logs(browser)
+    add_video(browser)
 
     browser.quit()
-
-
-
